@@ -1,55 +1,54 @@
-import { userState } from "../atoms/user";
-import {selector} from "recoil";
-import { courseState } from "../atoms/course";
+import { userState } from "../atoms/user"
+import { selector } from "recoil"
+import { courseState } from "../atoms/course"
 
 export const isCourseLoading = selector({
-  key: 'isCourseLoaingState',
-  get: ({get}) => {
-    const state = get(courseState);
+  key: "isCourseLoaingState",
+  get: ({ get }) => {
+    const state = get(courseState)
 
-    return state.isLoading;
+    return state.isLoading
   },
-});
+})
 
 export const courseDetails = selector({
-  key: 'courseDetailsState',
-  get: ({get}) => {
-    const state = get(courseState);
+  key: "courseDetailsState",
+  get: ({ get }) => {
+    const state = get(courseState)
 
-    return state.course;
+    return state.course
   },
-});
+})
 
 export const courseTitle = selector({
-  key: 'courseTitleState',
-  get: ({get}) => {
-    const state = get(courseState);
+  key: "courseTitleState",
+  get: ({ get }) => {
+    const state = get(courseState)
     if (state.course) {
-        return state.course.title;
+      return state.course.title
     }
-    return "";
+    return ""
   },
-});
+})
 
 export const coursePrice = selector({
-  key: 'coursePriceState',
-  get: ({get}) => {
-    const state = get(courseState);
+  key: "coursePriceState",
+  get: ({ get }) => {
+    const state = get(courseState)
     if (state.course) {
-        return state.course.price;
+      return state.course.price
     }
-    return "";
+    return ""
   },
-});
+})
 
 export const courseImage = selector({
-  key: 'courseImageState',
-  get: ({get}) => {
-    const state = get(courseState);
+  key: "courseImageState",
+  get: ({ get }) => {
+    const state = get(courseState)
     if (state.course) {
-        return state.course.image;
+      return state.course.imageLink
     }
-    return "";
+    return ""
   },
-});
-
+})

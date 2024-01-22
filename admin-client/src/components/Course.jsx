@@ -211,7 +211,7 @@ function CourseCard(props) {
           zIndex: 2,
         }}
       >
-        <img src={imageLink} style={{ width: 400 }}></img>
+        <img src={imageLink} style={{ width: 350 }}></img>
         <div style={{ marginLeft: 10 }}>
           <Typography variant="h5">{title}</Typography>
           <Price />
