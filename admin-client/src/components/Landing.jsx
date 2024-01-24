@@ -4,20 +4,20 @@ import { useNavigate } from "react-router-dom"
 import { useRecoilValue } from "recoil"
 import { userEmailState } from "../store/selectors/userEmail"
 import { isUserLoading } from "../store/selectors/isUserLoading.js"
+import { useTypingEffect } from "../useTypingEffect.js"
 
 export const Landing = () => {
   const navigate = useNavigate()
   const userEmail = useRecoilValue(userEmailState)
   const userLoading = useRecoilValue(isUserLoading)
+  const text = useTypingEffect("A place to learn, earn and grow", 100)
   return (
     <div>
       <Grid container style={{ padding: "5vw" }}>
         <Grid item xs={12} md={6} lg={6}>
           <div style={{ marginTop: 100 }}>
-            <Typography variant={"h2"}>Coursera Admin</Typography>
-            <Typography variant={"h5"}>
-              A place to learn, earn and grow
-            </Typography>
+            <Typography variant={"h2"}>CoursEd Admin</Typography>
+            <Typography variant={"h5"}>{text}</Typography>
             {!userLoading && !userEmail && (
               <div style={{ display: "flex", marginTop: 20 }}>
                 <div style={{ marginRight: 10 }}>
@@ -48,7 +48,7 @@ export const Landing = () => {
           <div></div>
         </Grid>
         <Grid item xs={12} md={6} lg={6} style={{ marginTop: 20 }}>
-          <img src={"/sssss.jpg"} width={"100%"} />
+          <img src={"/banner.jpg"} width={"100%"} />
         </Grid>
       </Grid>
     </div>

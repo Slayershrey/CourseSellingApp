@@ -1,0 +1,13 @@
+.transparent-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #0021f3;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transparent-button:hover {
+  background-color: rgba(206, 194, 194, 0.5);
+}

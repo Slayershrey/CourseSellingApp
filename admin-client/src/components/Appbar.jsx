@@ -5,6 +5,7 @@ import { isUserLoading } from "../store/selectors/isUserLoading"
 import { useSetRecoilState, useRecoilValue } from "recoil"
 import { userState } from "../store/atoms/user.js"
 import { userEmailState } from "../store/selectors/userEmail"
+import "./styles.css"
 
 function Appbar({}) {
   const navigate = useNavigate()
@@ -32,8 +33,8 @@ function Appbar({}) {
             navigate("/")
           }}
         >
-          <Typography variant={"h4"} style={{ fontSize: 30 }}>
-            CourseX
+          <Typography variant={"h4"} style={{ fontSize: 30, color: "#0021f3" }}>
+            CoursEd
           </Typography>
         </div>
 
@@ -87,34 +88,39 @@ function Appbar({}) {
         }}
       >
         <div
-          style={{ marginLeft: 10, cursor: "pointer" }}
+          style={{
+            marginLeft: 25,
+            cursor: "pointer",
+            marginTop: 10,
+            color: "#0021f3",
+          }}
           onClick={() => {
             navigate("/")
           }}
         >
-          <Typography variant={"h4"}>CourseX</Typography>
+          <Typography variant={"h4"}>CoursEd</Typography>
         </div>
 
-        <div style={{ display: "flex" }}>
-          <div style={{ marginRight: 10 }}>
-            <Button
-              variant={"contained"}
+        <div style={{ display: "flex", marginRight: 20 }}>
+          <div style={{ marginRight: 10, marginTop: 10 }}>
+            <button
+              className="transparent-button"
               onClick={() => {
                 navigate("/signup")
               }}
             >
               Signup
-            </Button>
+            </button>
           </div>
-          <div>
-            <Button
-              variant={"contained"}
+          <div style={{ marginTop: 10 }}>
+            <button
+              className="transparent-button"
               onClick={() => {
                 navigate("/signin")
               }}
             >
               Signin
-            </Button>
+            </button>
           </div>
         </div>
       </div>
