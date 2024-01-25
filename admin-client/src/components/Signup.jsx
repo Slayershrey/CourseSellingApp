@@ -37,7 +37,7 @@ function Signup() {
             Welcome. Sign Up below
           </Typography>
           <br></br>
-          <Card varint={"outlined"} style={{ width: 400, padding: 20 }}>
+          <Card variant={"outlined"} style={{ width: 400, padding: 20 }}>
             <TextField
               onChange={(evant11) => {
                 let elemt = evant11.target
