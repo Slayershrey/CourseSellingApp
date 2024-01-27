@@ -15,12 +15,16 @@ app.use(express.json())
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)
 
-mongoose.connect(dbstring, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  dbName: "CourseSellingApp",
-})
-
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on port ${port}`)
-)
+mongoose
+  .connect(dbstring, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: "CourseSellingApp",
+  })
+  .then(() => {
+    console.log("MongoDB connected successfully")
+    app.listen(port, () => console.log(`Server running on port ${port}`))
+  })
+  .catch((error) => {
+    console.error("MongoDB connection error:", error)
+  })
